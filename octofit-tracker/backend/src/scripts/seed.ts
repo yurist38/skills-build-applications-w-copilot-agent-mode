@@ -133,5 +133,5 @@ seed()
     process.exitCode = 1;
   })
   .finally(() => {
-    void disconnectDatabase();
+    return disconnectDatabase();
   });
