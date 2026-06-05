@@ -1,3 +1,4 @@
+import cors from 'cors';
 import express from 'express';
 import type { NextFunction, Request, RequestHandler, Response } from 'express';
 
@@ -20,6 +21,7 @@ const asyncHandler = (handler: AsyncRouteHandler): RequestHandler => {
   };
 };
 
+app.use(cors());
 app.use(express.json());
 
 app.get('/api/health', (_req, res) => {
